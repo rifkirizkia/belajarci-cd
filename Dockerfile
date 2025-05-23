@@ -40,6 +40,9 @@ COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 # Jalankan Composer
 RUN composer install --no-dev --optimize-autoloader
 
+# Copy .env.example ke .env
+RUN cp .env.example .env
+
 # Jalankan perintah Laravel
 RUN php artisan key:generate
 
