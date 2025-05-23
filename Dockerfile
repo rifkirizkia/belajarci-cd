@@ -46,6 +46,8 @@ RUN cp .env.example .env
 # Jalankan perintah Laravel
 RUN php artisan key:generate
 
+RUN rm .env
+
 # Ekspose port 80
 EXPOSE 80
 
